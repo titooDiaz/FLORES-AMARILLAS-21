@@ -13,8 +13,7 @@
     <div id="lyrics">
      
     </div>
-    <h1 class="titulo">Estas flores amarillas son un reflejo de la alegría que traes a mi vida. <br> <br>
-      Gracias por iluminar mis días con tu presencia.</h1>
+    <h1 class="titulo">...</h1>
   
     <div class="night"></div>
     <div class="flowers">
@@ -326,6 +325,50 @@
         </div>
       </div>
     </div>
+    <div id="heart"></div>
+
+    <style>
+
+  #heart{
+    --size: 20px;
+    --color: #fff;
+    transform:rotate(45deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation:beat 1s infinite alternate ease-in-out;
+  }
+  @keyframes beat{
+    to{
+      transform: rotate(45deg);
+    }
+  }
+
+  #heart,
+  #heart::before,
+  #heart::after{
+      width: var(--size);
+      height: var(--size);
+      background:var(--color);
+  }
+  #heart::before,
+  #heart::after{
+    content:'';
+    display: block;
+    border-radius:50%;
+  }
+  #heart::before{
+    margin-top: calc(var(--size)*-.5);
+  
+  }
+  #heart::after{
+    margin-top: calc(var(--size)* -0.5);
+    margin-left: calc(var(--size)* -0.5);
+  }
+
+    </style>
+
+    <script src="script.js"></script>
     <script src="anim.js"></script>
     <script src="main.js"></script>
   </body>
