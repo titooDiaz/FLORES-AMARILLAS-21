@@ -5,10 +5,10 @@ var lyrics = document.querySelector("#lyrics");
 var lyricsData = [
   { text: "...", time: 0 },
   { text: "El la estaba esperando con una flor amarillaaaa", time: 17 },
-  { text: "Ella lo estaba so;ando con la luz en su pupila", time: 25 },
+  { text: "Ella lo estaba soñando con la luz en su pupila", time: 25 },
   { text: "Y el amarillo del sol iluminaba la esquina", time: 33 },
   { text: "Lo sentia tan cercano", time: 40 },
-  { text: "Lo sentia desde ni;aaa", time: 42 },
+  { text: "Lo sentia desde niñaaa", time: 42 },
   { text: "Ella sabia que el sabia que algun dia pasaria", time: 48 },
   { text: "Que vendria a buscarla con sus flores amarillaaass", time: 51 },
   { text: "No te apures, no detengas", time: 60 },
