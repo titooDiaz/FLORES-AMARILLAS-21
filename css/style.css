@@ -3,6 +3,7 @@
     cursor: url('../img/cursor.png') 10 10, default;
     font-family: 'Poppins',cursive;
 }
+
 body{
     cursor: url('../img/cursor.png') 10 10, default;
     color: azure;
@@ -16,6 +17,12 @@ body{
     /* padding-top: -30; */
 }
 
+.centered {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
 .botones{
     padding: 9px;
     border-radius: 80px;
@@ -25,12 +32,8 @@ body{
 
 .botones a{
     background-color: #0a2be9;
-    padding: 9px;
-    border-radius: 80px;
-    -webkit-border-radius: 80px;
-    -moz-border-radius: 80px;
-    -ms-border-radius: 80px;
-    -o-border-radius: 80px;
+    padding: 12px;
+    border-radius: 10px;
 
 }
 
