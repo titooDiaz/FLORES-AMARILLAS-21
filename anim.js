@@ -2,43 +2,31 @@
 var audio = document.querySelector("audio");
 var lyrics = document.querySelector("#lyrics");
 
-// Array de objetos que contiene cada línea y su tiempo de aparición en segundos
 var lyricsData = [
-  { text: "At the time", time: 15 },
-  { text: "The whisper of birds", time: 18 },
-  { text: "Lonely before the sun cried", time: 27 },
-  { text: "Fell from the sky", time: 32 },
-  { text: "Like water drops", time: 33 },
-  { text: "Where I'm now? I don't know why", time: 41 },
-  { text: "Nice butterflies in my hands", time: 47 },
-  { text: "Too much light for twilight", time: 54 },
-  { text: "In the mood for the flowers love", time: 59 },
-  { text: "That vision", time: 67 },
-  { text: "Really strong, blew my mind", time: 72 },
-  { text: "Silence Let me see what it was", time: 78 },
-  { text: "I only want to live in clouds", time: 83 },
-  { text: "Where I'm now? I don't know why", time: 91 },
-  { text: "Nice butterflies in my hands", time: 97 },
-  { text: "Too much light for twilight", time: 104 },
-  { text: "In the mood for the flowers love", time: 108 },
-  { text: "At the time", time: 144 },
-  { text: "The whisper of birds", time: 148 },
-  { text: "Lonely before the sun cried", time: 153 },
-  { text: "Fell from the sky", time: 158 },
-  { text: "Like water drops", time: 164 },
-  { text: "Where I'm now? I don't know why", time: 169 },
-  { text: "Nice butterflies in my hands", time: 176 },
-  { text: "Too much light for twilight", time: 183 },
-  { text: "In the mood for the flowers", time: 188 },
-  { text: "Love.", time: 140 },
+  { text: "...", time: 0 },
+  { text: "El la estaba esperando con una flor amarillaaaa", time: 17 },
+  { text: "Ella lo estaba so;ando con la luz en su pupila", time: 25 },
+  { text: "Y el amarillo del sol iluminaba la esquina", time: 33 },
+  { text: "Lo sentia tan cercano", time: 40 },
+  { text: "Lo sentia desde ni;aaa", time: 42 },
+  { text: "Ella sabia que el sabia que algun dia pasaria", time: 48 },
+  { text: "Que vendria a buscarla con sus flores amarillaaass", time: 51 },
+  { text: "No te apures, no detengas", time: 60 },
+  { text: "El instante del encuentro", time: 62 },
+  { text: "Esta dicho que es un hecho", time: 64 },
+  { text: "No la pierdas, no hay derecho", time: 65 },
+  { text: "No te olvides que la vida casi nunca esta dormida...", time: 68 },
+  { text: "Te amito wiwiwi", time: 75 },
+  { text: "...", time: 80 },
 ];
 
 // Animar las letras
 function updateLyrics() {
   var time = Math.floor(audio.currentTime);
-  var currentLine = lyricsData.find(
-    (line) => time >= line.time && time < line.time + 6
-  );
+  var currentLine = lyricsData.find((line, index) => {
+    var nextLineTime = lyricsData[index + 1] ? lyricsData[index + 1].time : Infinity;
+    return time >= line.time && time < nextLineTime;
+  });
 
   if (currentLine) {
     // Calcula la opacidad basada en el tiempo en la línea actual
@@ -55,7 +43,9 @@ function updateLyrics() {
   }
 }
 
-setInterval(updateLyrics, 1000);
+// Llama a la función updateLyrics cada 100 ms para actualizar la letra
+setInterval(updateLyrics, 100);
+
 
 //funcion titulo
 // Función para ocultar el título después de 216 segundos
